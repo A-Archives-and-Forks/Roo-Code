@@ -578,6 +578,10 @@ export const webviewMessageHandler = async (
 			await updateGlobalState("alwaysAllowUpdateTodoList", message.bool)
 			await provider.postStateToWebview()
 			break
+		case "requireCtrlEnterToSend":
+			await updateGlobalState("requireCtrlEnterToSend", message.bool ?? false)
+			await provider.postStateToWebview()
+			break
 		case "askResponse":
 			provider.getCurrentTask()?.handleWebviewAskResponse(message.askResponse!, message.text, message.images)
 			break
@@ -1508,6 +1512,10 @@ export const webviewMessageHandler = async (
 			if (message.bool !== undefined) {
 				Terminal.setTerminalZdotdir(message.bool)
 			}
+			break
+		case "requireCtrlEnterToSend":
+			await updateGlobalState("requireCtrlEnterToSend", message.bool)
+			await provider.postStateToWebview()
 			break
 		case "terminalCompressProgressBar":
 			await updateGlobalState("terminalCompressProgressBar", message.bool)
