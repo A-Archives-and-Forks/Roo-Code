@@ -1901,6 +1901,7 @@ export class ClineProvider
 			historyPreviewCollapsed,
 			reasoningBlockCollapsed,
 			cloudUserInfo,
+			taskHistoryRetention,
 			cloudIsAuthenticated,
 			sharingEnabled,
 			organizationAllowList,
@@ -2080,6 +2081,8 @@ export class ClineProvider
 			includeDiagnosticMessages: includeDiagnosticMessages ?? true,
 			maxDiagnosticMessages: maxDiagnosticMessages ?? 50,
 			includeTaskHistoryInEnhance: includeTaskHistoryInEnhance ?? true,
+			// Task history retention setting for About tab dropdown
+			taskHistoryRetention: taskHistoryRetention ?? "never",
 			includeCurrentTime: includeCurrentTime ?? true,
 			includeCurrentCost: includeCurrentCost ?? true,
 			taskSyncEnabled,
@@ -2275,6 +2278,8 @@ export class ClineProvider
 			organizationSettingsVersion,
 			condensingApiConfigId: stateValues.condensingApiConfigId,
 			customCondensingPrompt: stateValues.customCondensingPrompt,
+			// Task history retention selection
+			taskHistoryRetention: stateValues.taskHistoryRetention ?? "never",
 			codebaseIndexModels: stateValues.codebaseIndexModels ?? EMBEDDING_MODEL_PROFILES,
 			codebaseIndexConfig: {
 				codebaseIndexEnabled: stateValues.codebaseIndexConfig?.codebaseIndexEnabled ?? true,

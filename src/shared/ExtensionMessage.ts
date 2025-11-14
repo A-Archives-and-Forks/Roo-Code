@@ -282,6 +282,7 @@ export type ExtensionState = Pick<
 	| "reasoningBlockCollapsed"
 	| "includeCurrentTime"
 	| "includeCurrentCost"
+	| "taskHistoryRetention"
 > & {
 	version: string
 	clineMessages: ClineMessage[]
